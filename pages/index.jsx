@@ -19,9 +19,9 @@ export default function Posts({ postsList }) {
       <button className="add-post-btn" onClick={handleAddPost}>
         Add a new post
       </button>
-      {postsList?.map((post) => (
-        <SinglePost post={post} />
-      ))}
+      {postsList?.length
+        ? postsList.map((post) => <SinglePost post={post} />)
+        : "No posts to show"}
     </div>
   );
 }
@@ -30,7 +30,8 @@ export async function getServerSideProps() {
   const props = {};
   const response = await api("posts");
   // console.log("posts response: ", response);
-  props.postsList = response;
+  if (response) props.postsList = response;
+  else props.postsList = null;
 
   return { props };
 }
