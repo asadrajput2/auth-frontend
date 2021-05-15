@@ -37,7 +37,7 @@ body {
 }
 
 .header {
-  width: max-content;
+  width: auto;
   font-size: 55px;
   font-weight: bolder;
   margin-bottom: 40px;
@@ -69,7 +69,7 @@ textarea {
 
 .card {
   height: 300px;
-  width: auto;
+  width: var(--card-width);
   border-radius: 5px;
   /* border: 1px solid #242424; */
   box-shadow: 7px 7px 7px #131313;
