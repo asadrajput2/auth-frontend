@@ -1,5 +1,5 @@
 module.exports = {
   env: {
-    BASE_URL: "http://localhost:8080",
+    BASE_URL: "https://3tbi1cczab.execute-api.us-east-2.amazonaws.com/dev",
   },
 };
