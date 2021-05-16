@@ -2,11 +2,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import api from "../../apiProvider";
-import { BASE_URL } from "../../config/constants";
 import useAuthentication from "../../utils/verifyAuth";
 
 const GH_CLIENT = "34693835b5f6da271c7a";
-const GH_REDIRECT = `${BASE_URL}/auth`;
+const GH_REDIRECT = `${process.env.FRONTEND_URL}/auth`;
 const GH_LINK = `https://github.com/login/oauth/authorize?client_id=${GH_CLIENT}&redirect_uri=${GH_REDIRECT}&scope=user`;
 
 export default function Home({ query }) {
